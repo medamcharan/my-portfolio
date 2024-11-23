@@ -12,7 +12,28 @@ export default defineConfig({
   },
   server: {
     hmr: {
-      overlay: false,
+      overlay: false, // Disable error overlay during development
     },
+  },
+  resolve: {
+    alias: {
+      '@': '/src', // Simplified path alias for `/src`
+    },
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            return 'vendor'; // Group node_modules into a vendor chunk
+          }
+        },
+      },
+    },
+    sourcemap: true, // Generate source maps for production
+    chunkSizeWarningLimit: 1000, // Increase limit to 1MB
+  },
+  define: {
+    'process.env': {}, // Enable environment variables
   },
 });
