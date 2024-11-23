@@ -1,0 +1,270 @@
+/* General container styling */
+.educations-container {
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    margin-top: 3cm;
+  }
+  
+  .educations-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+    color: #333; /* Default text color */
+    margin-left: 5cm;
+  }
+  .background-video {
+    margin-top: 4cm;
+    margin-left: 2cm;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 13cm; /* Set the width to 5cm */
+    height: 13cm; /* Set the height to 5cm */
+    object-fit: cover; /* Ensures the video maintains aspect ratio and fills the container */
+    z-index: -1; /* Keeps the video behind the content */
+    /* Ensures that the content doesn't overflow outside the container */
+    border-radius: 60px; /* Optional: Adds rounded corners */
+    
+  }
+  
+  
+  /* Shine underline effect */
+  .educations-title:after {
+    
+    content: ''; /* Creates the underline */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px; /* Thickness of the underline */
+    background: linear-gradient(90deg, #16dcbb, #16dcbb); /* Gradient color for the shine */
+    transform: scaleX(0); /* Initially hidden */
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out; /* Smooth transition for the underline */
+  }
+  
+  /* Reveal the underline on hover */
+  .educations-title:hover:after {
+    transform: scaleX(1); /* Expands the underline when hovered */
+  }
+  
+  /* Text color change on hover (optional) */
+  .educations-title:hover {
+    color: #16dcbb; /* Change the text color on hover */
+  }
+  
+  /* List and card styling */
+  .educations-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .education-card {
+    width: 10cm;
+    height: 2cm;
+    position: relative; /* Allows positioning child elements like year */
+    display: flex;
+    flex-direction: row; /* Default row direction for icon at the start */
+    align-items: center;
+    border: 2px solid transparent; /* Default border */
+    padding: 16px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #0e1026, #161b30);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Default shadow */
+    margin-left: 20cm;
+    transition: all 0.3s ease-in-out; /* Smooth hover transition */
+  }
+  
+  /* Hover effect with 3D shadow */
+  .education-card:hover {
+    background: linear-gradient(135deg, #6c63ff, #4d4cd6); /* Shining effect on hover */
+    border: 2px solid #6c63ff; /* Border changes color */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15), 0 10px 40px rgba(0, 0, 0, 0.25); /* 3D shadow effect */
+    transform: translateY(-10px); /* Slight upward movement to enhance the 3D effect */
+  }
+  
+  /* Icon styling */
+  .education-icon {
+    flex-shrink: 0;
+    font-size: 32px;
+    color: #6c63ff;
+    margin-right: 20px; /* Adds spacing between icon and content */
+    transition: color 0.3s ease-in-out; /* Smooth hover effect for icon */
+  }
+  
+  .education-card:hover .education-icon {
+    color: #ffffff; /* Icon turns white on hover */
+  }
+  @media (max-width: 768px) {
+    .educations-container {
+      padding: 10px;
+      margin-top: 2cm; /* Adjust the top margin for smaller screens */
+    }
+  
+    .educations-title {
+      margin-left: 0;
+      font-size: 20px; /* Slightly smaller font for mobile */
+      margin-bottom: 10px;
+      text-align: center; /* Center-align the title */
+    }
+  
+    .educations-list {
+      gap: 18px; /* Reduce the gap between cards */
+      align-items: center; /* Center-align items */
+    }
+  
+    .education-card {
+      width: 10%; /* Slightly smaller width for cards */
+      height: auto; /* Let height adjust automatically */
+      padding: 10px; /* Reduce padding for smaller cards */
+      margin-left: 0; /* Remove left margin for mobile */
+      flex-direction: column; /* Stack content vertically */
+      align-items: flex-start; /* Align items to the start */
+      border-radius: 50px; /* Slightly less rounded corners */
+    }
+  
+    .education-icon {
+      font-size: 24px; /* Reduce icon size */
+      margin-right: 0; /* Remove right margin for stacked layout */
+      margin-bottom: 6px; /* Add spacing below icon */
+    }
+  
+    .education-year {
+      top: -5px; /* Adjust position for smaller screens */
+      font-size: 10px; /* Smaller font size */
+      padding: 3px 6px;
+    }
+  
+    .education-content {
+      text-align: left; /* Align text to the left */
+    }
+  
+    .education-degree {
+      font-size: 14px; /* Reduce font size */
+      
+    }
+  
+    .education-institute {
+      font-size: 10px; /* Smaller font for mobile */
+    }
+  
+    .background-video {
+      margin-top: 16px; /* Add spacing above the video */
+      margin-left: 0; /* Remove left margin */
+      width: 100%; /* Full width for smaller screens */
+      height: 5cm; /* Adjusted height */
+      border-radius: 15px; /* Reduce rounded corners for smaller screens */
+      position: static; /* Change position to static for normal flow */
+      z-index: 0; /* Ensure video is part of the content flow */
+      object-fit: cover; /* Keep video aspect ratio intact */
+    }
+  }
+  
+  
+    
+      
+      
+  /* Year styling */
+  .education-year {
+    position: absolute; /* Positions year independently of other elements */
+    top: -10px; /* Moves it above the card */
+    left: 50%;
+    transform: translateX(-50%); /* Centers it horizontally */
+    background-color: #1e293b;
+    padding: 4px 12px;
+    color: #d6cdd3;
+    font-weight: bold;
+    border-radius: 16px;
+    font-size: 14px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  /* Content styling */
+  .education-content {
+    flex-grow: 1;
+  }
+  
+  .education-degree {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+  
+  .education-institute {
+    color: #aaa;
+    font-size: 14px;
+  }
+  
+  .education-card:hover {
+    background: linear-gradient(
+      135deg,
+      #b06ab3, /* Soft lavender */
+      #8e44ad, /* Deep purple */
+      #b06ab3,  /* Matching the first color */
+      #2c3e50  /* Dark midnight blue */
+    );
+    background-size: 200% 200%; /* Makes the gradient appear as "shining" */
+    animation: shine 1.5s linear infinite;
+  }
+  
+  
+  
+  @keyframes shine {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+  @media (max-width: 768px) {
+    .education-year {
+      top: -8px; /* Slightly closer to the card for smaller screens */
+      font-size: 12px; /* Reduced font size for better scaling */
+      padding: 2px 8px; /* Smaller padding */
+      border-radius: 12px; /* Slightly smaller rounded corners */
+      left: 50%; /* Retains centered positioning */
+      transform: translateX(-50%); /* Keeps horizontal centering */
+    }
+  
+    .education-content {
+      text-align: left; /* Align text to the left for mobile */
+      margin-top: 8px; /* Add spacing between elements */
+    }
+  
+    .education-degree {
+      font-size: 16px; /* Slightly smaller font */
+    }
+  
+    .education-institute {
+      font-size: 12px; /* Adjust font size for readability */
+      color: #d6cdd3; /* Matches the color for consistency */
+    }
+  
+    .education-card {
+      width: 100%; /* Full width for smaller screens */
+      height: auto; /* Auto height to adjust dynamically */
+      padding: 12px; /* Adjust padding for compact spacing */
+      flex-direction: column; /* Stack content vertically */
+      align-items: flex-start; /* Align items to the start */
+    }
+  
+    .education-card:hover {
+      /* Keep hover effects intact for mobile */
+      background: linear-gradient(
+        135deg,
+        #b06ab3,
+        #8e44ad,
+        #b06ab3,
+        #2c3e50
+      );
+      background-size: 200% 200%;
+      animation: shine 1.5s linear infinite;
+    }
+  }
+  

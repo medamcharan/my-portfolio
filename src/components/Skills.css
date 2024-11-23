@@ -1,0 +1,129 @@
+/* Styles for Skills section */
+.skills-container {
+   
+    padding: 2rem;
+    
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 5rem;
+    overflow: hidden;
+  }
+  
+  
+  .skills-title {
+    margin-left: 20cm;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333; /* Default text color */
+    margin-bottom: 1.5rem;
+    position: relative; /* Needed for the pseudo-element */
+    display: inline-block; /* Inline block to make the underline fit the text */
+  }
+  
+  /* Pseudo-element for the underline */
+  .skills-title:after {
+    content: ''; /* Creates the underline */
+    position: absolute;
+    bottom: 0; /* Positioned at the bottom of the text */
+    left: 0; /* Start from the left */
+    width: 100%; /* Full width for the underline */
+    height: 3px; /* Thickness of the underline */
+    background: linear-gradient(90deg, #16dcbb, #16dcbb); /* Gradient color */
+    transform: scaleX(0); /* Initially hidden */
+    transform-origin: bottom right; /* Animation starts from the right */
+    transition: transform 0.3s ease-out; /* Smooth transition for the underline */
+  }
+  
+  /* Hover effect for the underline */
+  .skills-title:hover:after {
+    transform: scaleX(1); /* Expands the underline */
+    transform-origin: bottom left; /* Animates from right to left */
+  }
+  
+  /* Optional: Change text color on hover */
+  .skills-title:hover {
+    color: #16dcbb; /* Matches the underline color */
+  }
+  
+  
+  .skills-list {
+    margin-top: 2cm;
+    display: flex;
+    gap: 1.5rem;
+    animation: scrollLeft 15s linear infinite; /* Apply animation */
+    white-space: nowrap; /* Prevent items from wrapping */
+    width: 200%; /* Increase width to accommodate both sets of skills */
+  }
+  
+  .skill-card {
+    background-color: black;
+    padding: 1rem;
+    width: 200px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 6px rgba(240, 235, 235, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, border 0.3s ease; /* Smooth transition for transform and border */
+    border: 2px solid transparent; /* Default border is transparent */
+  }
+  
+  .skill-card:hover {
+    transform: translateY(-10px);
+    border: 2px solid #007bff; /* Light blue border on hover */
+  }
+  
+  
+  .skill-icon {
+    font-size: 3rem;
+    color: #007bff;
+    margin-bottom: 1rem;
+  }
+  
+  .skill-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0.5rem;
+  }
+  
+  .skill-level {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  /* Animation for scrolling the skills list */
+  @keyframes scrollLeft {
+    0% {
+      transform: translateX(0); /* Start from the left */
+    }
+    100% {
+      transform: translateX(-40%); /* End at the left side, after scrolling through one set of items */
+    }
+  }
+  
+  /* Responsive styles for smaller screens */
+  @media (max-width: 768px) {
+    .skills-list {
+      gap: 1rem;
+    }
+  
+    .skill-card {
+      width: 160px;
+      padding: 0.8rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .skills-title {
+      font-size: 1.5rem;
+    }
+  
+    .skill-card {
+      width: 140px;
+      padding: 0.6rem;
+    }
+  }
+  
