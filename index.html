@@ -2,14 +2,47 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
-   
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React + TS</title>
+    <meta name="description" content="Your project description goes here." />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta property="og:title" content="Your Website Title" />
+    <meta property="og:description" content="A brief description of your website." />
+    <meta property="og:image" content="/path-to-your-image.png" />
+    <meta property="og:url" content="https://your-website-url.com" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Your Website Title" />
+    <meta name="twitter:description" content="A brief description of your website." />
+    <meta name="twitter:image" content="/path-to-your-image.png" />
+
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet" />
+    </noscript>
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <title>My Awesome React App</title>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <noscript>You need to enable JavaScript to run this app.</noscript>
+      <div style="text-align: center; margin-top: 2rem;">
+        <h2>Loading...</h2>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("/sw.js")
+            .then(registration => console.log("ServiceWorker registered:", registration))
+            .catch(error => console.error("ServiceWorker registration failed:", error));
+        });
+      }
+    </script>
   </body>
 </html>

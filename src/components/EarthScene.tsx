@@ -62,18 +62,16 @@ const EarthScene: React.FC = () => {
     scene.add(earth);
 
     // Earth cloud
-const cloudTexture = new THREE.TextureLoader().load("https://i.postimg.cc/k4WhFtFh/cloud.png");
-const cloudGeometry = new THREE.SphereGeometry(16, 32, 32); // Reduced size
-const cloudMaterial = new THREE.MeshPhongMaterial({
-  shininess: 10,  // This works with MeshPhongMaterial
-  map: cloudTexture,
-  transparent: true,
-  opacity: 0.5 // Example opacity adjustment (optional)
-});
-
-const cloud = new THREE.Mesh(cloudGeometry, cloudMaterial);
-scene.add(cloud);
-
+    const cloudTexture = new THREE.TextureLoader().load("https://i.postimg.cc/k4WhFtFh/cloud.png");
+    const cloudGeometry = new THREE.SphereGeometry(16, 32, 32); // Reduced size
+    const cloudMaterial = new THREE.MeshBasicMaterial({
+      shininess: 10,
+      map: cloudTexture,
+      transparent: true,
+      opacity: 0.8,
+    });
+    cloud = new THREE.Mesh(cloudGeometry, cloudMaterial);
+    scene.add(cloud);
 
     // Check screen width and apply position shift for larger screens (laptop/desktop)
     if (window.innerWidth > 1024) {  // Adjust this threshold for your needs
